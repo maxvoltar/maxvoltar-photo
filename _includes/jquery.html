@@ -1,37 +1,30 @@
 <script>
-	$(document).keydown(function(e) {
-    if (e.keyCode == 27) {
-			window.location = '#home';
-			console.log('#home' );
-    }
-	});
-	// $('.item').click(function() {
-	// 	var previous = $("li:target").prev('li');
-	// 	var next = $("li:target").next('li');
-	// 	$(document).keydown(function(e){
-	//     switch (e.which){
-	//     case 37:
-	// 			window.location = '#' + previous.attr('id');
-	// 			console.log('#' +  previous.attr('id') );
-	//       break;
-	//     case 39:
-	// 			window.location = '#' + next.attr('id');
-	// 			console.log('#' +  next.attr('id') );
-	//       break;
-	//     }
-	// 	});
-	// });
-	$('.next').on('click', function() {
-		var next = $(this).parents('li').next('li');
-		window.location = '#' + next.attr('id');
-		console.log('#' +  next.attr('id') );
-		return false;
-	});
-	$('.previous').on('click', function() {
-		var previous = $(this).parents('li').prev('li');
-		window.location = '#' + previous.attr('id');
-		console.log('#' +  previous.attr('id') );
-		return false;
+	$(function() {
+		$(document).on('keydown', function(e){
+			switch (e.which){
+			case 27:
+				window.location = '#home';
+				console.log('#home');
+			case 37:
+				$('.previous:visible').click();
+				break;
+			case 39:
+				$('.next:visible').click();
+				break;
+			}
+		});
+		$(document).on('click', '.next', function(e) {
+			var next = $(this).closest('li').next('li');
+			window.location = '#' + next.attr('id');
+			console.log('#' +  next.attr('id') );
+			e.preventDefault();
+		});
+		$(document).on('click', '.previous', function(e) {
+			var previous = $(this).closest('li').prev('li');
+			window.location = '#' + previous.attr('id');
+			console.log('#' +  previous.attr('id') );
+			e.preventDefault();
+		});
 	});
 	lazyload();
 </script>
