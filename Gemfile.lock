@@ -1,5 +1,6 @@
-PATH
-  remote: /Users/ben/Sites/jekyll_image_processing
+GIT
+  remote: https://github.com/benubois/jekyll_image_processing
+  revision: 5769d52098284be4451c377fa1b4f0fa68315abb
   specs:
     jekyll_image_processing (0.1.0)
       image_processing (>= 1.10.3)

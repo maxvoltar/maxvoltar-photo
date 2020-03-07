@@ -19,10 +19,6 @@ module Jekyll
       basename = File.basename(file.path)
       name = File.basename(basename).split(".").first
 
-      puts '-----------'
-      puts name
-      puts '-----------'
-
       @site = site
       @base = base
       @dir  = name
