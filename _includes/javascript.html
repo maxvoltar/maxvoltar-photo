@@ -10,14 +10,32 @@
     button && button.click();
   }
 
-  const navigate = (event, buttonClass, property) => {
+  const navigate = (destination) => {
+    const link = document.querySelector("[href='" + destination + "']");
+    const title = link.getAttribute('title');
+    const anchor = destination;
+    const path = anchor.replace('#', '').replace('.jpg', '');
+    const href = `/${path}/${anchor}`;
+    document.title = title;
+    window.location = anchor;
+    window.history.replaceState({}, title, href);
+  }
+
+  const navigationButton = (event, buttonClass, property) => {
     if (event.target.matches(buttonClass)) {
-      const button = event.target.closest("li")[property];
-      if (button) {
-        const id = `#${button.getAttribute('id')}`;
-        window.location = id;
+      const sibling = event.target.closest("li")[property];
+      if (sibling) {
+        const id = `#${sibling.getAttribute('id')}`;
+        navigate(id);
         console.log(`Going to ${buttonClass}: ${id}`);
       }
+      event.preventDefault();
+    }
+  }
+
+  const openPhoto = (event, buttonClass) => {
+    if (event.target.matches(buttonClass)) {
+      navigate(event.target.getAttribute('href'));
       event.preventDefault();
     }
   }
@@ -34,9 +52,10 @@
   });
 
   document.addEventListener('click', (event) => {
-    navigate(event, '.next', 'nextElementSibling');
-    navigate(event, '.previous', 'previousElementSibling');
+    navigationButton(event, '.next', 'nextElementSibling');
+    navigationButton(event, '.previous', 'previousElementSibling');
+    openPhoto(event, '.open')
   });
 
   lazyload();
-</script>
+  </script>

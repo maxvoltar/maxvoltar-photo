@@ -1,11 +1,11 @@
 {% capture image_path %}photos/original/{{ image.name }}{% endcapture %}
 
-<li class="item" id="{{ image.name }}" style="background-image: url({{ site.baseurl }}photos/tint/{{ image.name }})">
-	<img class="lazyload" data-src="{{ site.baseurl }}photos/thumbnail/{{ image.name }}" src="{{ site.baseurl }}photos/tint/{{ image.name }}" height="{{ image_path | exif: 'height'}}" width="{{ image_path | exif: 'width'}}" />
+<li class="item" id="{{ image.name }}" style="background-image: url(/{{ site.baseurl }}photos/tint/{{ image.name }})">
+	<img class="lazyload" data-src="/{{ site.baseurl }}photos/thumbnail/{{ image.name }}" src="/{{ site.baseurl }}photos/tint/{{ image.name }}" height="{{ image_path | exif: 'height'}}" width="{{ image_path | exif: 'width'}}" />
 	<span class="full">
-		<span style="background-image: url({{ site.baseurl }}photos/large/{{ image.name }})"></span>
+		<span style="background-image: url(/{{ site.baseurl }}photos/large/{{ image.name }})"></span>
 	</span>
-	<a class="open" href="#{{ image.name }}">Open</a>
+	<a class="open" href="#{{ image.name }}" title="{{ image.name | titleize }}">Open</a>
 	<a class="close" href="#home">Close</a>
 	<a class="next" href="#next" title="Go to next photo"><span>Next</span></a>
 	<a class="previous" href="#previous" title="Go to previous photo"><span>Previous</span></a>
