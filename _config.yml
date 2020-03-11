@@ -23,7 +23,7 @@ email: scott_stephens@icloud.com
 author:
   name: Scott Stephens
   email: scott_stephens@icloud.com #optional
-  website: https://maxvoltar.com
+  website: https://scottwstephens.com
 description: >- # this means to ignore newlines until "baseurl:"
   @scott's minimalistic, self-hosted photo stream.
 baseurl: "" # the subpath of your site, e.g. /blog
