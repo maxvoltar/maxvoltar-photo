@@ -6,8 +6,8 @@
 	<generator uri="https://github.com/maxvoltar/photo-stream">Photo Stream by @maxvoltar</generator>
 	<link href="{{ site.url }}/feed.xml" rel="self" type="application/atom+xml" />
 	<link href="{{ site.url }}" rel="alternate" type="text/html"/>
-	<updated>{{ site.time }}</updated>
-	<id>{{ site.url }}</id>
+	<updated>{{ site.time | date_to_xmlschema }}</updated>
+	<id>{{ site.time | date_to_xmlschema }}</id>
 	<title type="html">{{ site.title}}</title>
 	<subtitle>{{ site.description }}</subtitle>
 
@@ -31,9 +31,9 @@
 		<entry>
 			<title type="html">{{ image.name | strip_extension }}</title>
 			<link href="{{ site.url }}/{{ image.name | strip_extension | slugify }}/" rel="alternate" type="text/html" title="{{ image.name | strip_extension }}" />
-			<published>{{ site.time }}</published>
-			<updated>{{ image_path | exif: 'date_time'}}</updated>
-			<id>{{ image.name }}</id>
+			<published>{{ site.time | date_to_xmlschema }}</published>
+			<updated>{{ site.time | date_to_xmlschema }}</updated>
+			<id>{{ site.url }}/{{ image.name | strip_extension | slugify }}/</id>
 			<content type="html">
 				<![CDATA[<figure><a href="{{ site.url }}/{{ image.name | strip_extension | slugify }}/"><img src="{{ site.url }}{{ image.name | uri_escape | processed_path: 'large' }}" alt="{{ image.name | strip_extension }}" /></a></figure>]]>
 			</content>

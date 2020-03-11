@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/benubois/jekyll_image_processing
-  revision: 3c3dab7e979c29585361ce6b4e04ca91a404e058
+  revision: e4a262620db88b5c5672d3398b120abc5fb74a61
   specs:
     jekyll_image_processing (0.1.0)
       image_processing (>= 1.10.3)

@@ -80,6 +80,7 @@ body {
 	display: flex;
 	flex-wrap: wrap;
 	position: relative;
+	align-content: flex-start;
 
 	&:after {
     content: "";
@@ -295,7 +296,13 @@ body {
 			}
 		}
 		
-		&:not(.github) {
+		&.rss {
+			a {
+				background-image: url(../img/icon-rss.svg);
+			}
+		}
+		
+		&.link {
 			a {
 				text-indent: 0;
 				width: auto;
