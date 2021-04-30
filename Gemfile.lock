@@ -77,7 +77,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
-    rexml (3.2.4)
+    rexml (3.2.5)
     rouge (3.16.0)
     ruby-vips (2.0.17)
       ffi (~> 1.9)
