@@ -301,7 +301,12 @@ body {
 				background-image: url(../img/icon-rss.svg);
 			}
 		}
-		
+
+		&.twitter {
+			a {
+				background-image: url(../img/icon-twitter.svg);
+			}
+		}
 		&.link {
 			a {
 				text-indent: 0;
